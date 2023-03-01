@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery ve Javascript ile Css İşlemleri</title>
+    <script src="/jquery-3.6.3.min.js"></script>
+    <style>
+        .baslik {color : red; font-size: larger;}
+        .sekil {color: crimson; }
+        .brd {border: 1px solid; min-height: 18px;}
+    </style>
+</head>
+<body>
+    <h1>Jquery ve Javascript ile Css İşlemleri</h1>
+    <h1><hr></h1>
+    <h3 id="jqilegizle">Bu element Jquery ile gizlenecek</h3>
+    <h1><hr></h1>
+    <h3 id="jsilegizle">Bu element Javascript ile gizlenecek</h3>
+    <h1><hr></h1>
+    <h1><hr></h1>
+    <script>
+        // Elementleri gizleme
+        $("#jqilegizle").hide();
+        document.getElementById("jsilegizle").style.display = "none";
+        // Elementleri gösterme
+        $("#jqilegizle").show();
+        document.getElementById("jsilegizle").style.display = "block";
+    </script>
+    <h1><hr></h1>
+    <h2>Elementlerin Css'lerini Değiştirme</h2>
+    <div id="jqilesekillendir" class="jq sekil test brd">
+        Elementlerin Css'lerini Değiştirme
+    </div>
+    <div id="jsilesekillendir" class="js sekil test brd">
+        Elementlerin Css'lerini Değiştirme
+    </div>
+    <script>
+        $("#jqilesekillendir").css("font-size","34px");
+        $("#jqilesekillendir").css("padding","34px");
+        // class ekleme-silme
+        $("h2:first").addClass("baslik");
+        $("#jqilesekillendir").addClass("jsclass deneme");
+        $("#jqilesekillendir").removeClass("sekil");
+        // Js ile css
+        document.getElementById("jsilesekillendir").style.color = "blue"
+        document.getElementById("jsilesekillendir").style.padding = "18px"
+        document.getElementById("jsilesekillendir").style.margin = "18px"
+        // Js ile class ekleme-silme
+        document.getElementById("jsilesekillendir").classList.add("baslik")
+        document.getElementById("jsilesekillendir").classList.remove("baslik")
+
+
+
+
+
+    </script>
+</body>
+</html>

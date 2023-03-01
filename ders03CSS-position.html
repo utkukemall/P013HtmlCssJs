@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Css Position Özelliği</title>
+</head>
+<body>
+    <h1>Css Position Özelliği</h1>
+    <p>
+        Elementleri konumlandırmak için kullanılır
+    </p>
+    <h2>Css Konumları</h2>
+    <ol>
+        <li>Static</li>
+        <li>Relative : Göreceli</li>
+        <li>Fixed : Sabit</li>
+        <li>Absolute : Mutlak</li>
+        <li>Sticky : Yapışkan</li>
+    </ol>
+
+    <div style="position: static; left: 200px;">
+        style="position: static;"
+    </div>
+
+    <div style="position: relative; left: 200px; right: 10px; bottom: 50px; top: 75px; border: 1px inset blue;">
+        style="position: relative;"
+    </div>
+
+    <div style="position: fixed; width: 200px; right: 10px; top: 50px; border: 1px inset blue;">
+        style="position: fixed;" reklam banner ı için kullanılabilir
+    </div>
+
+    <div style="position: relative; height: 200px; border: 1px inset blue;">
+        position: relative;
+        <div style="position: absolute; width: 200px; left: 100px; bottom: 50px; border: 1px inset blue;">
+            style="position: absolute;"
+        </div>
+    </div>
+
+    <div style="position: sticky; top: 0; padding: 5px; background-color: antiquewhite; border: 3px outset red;">
+        position: sticky
+    </div>
+
+    <div style="height: 700px;">
+        sticky alt içerik
+    </div>
+
+    <h3>Z Index</h3>
+
+    <div style="position: relative; width: 500px; height: 500px; border: 3px inset red;">
+        <div style="position: absolute; top: 84px; right: 10px; width: 200px; height: 100px; background-color: blue; border: 1px solid yellow; z-index: 3;">
+           1. position: absolute - alttaki
+        </div>
+        <div style="position: absolute; top: 94px; right: 10px; width: 200px; height: 100px; background-color: blue; border: 1px solid yellow; z-index: 1;">
+           2. position: absolute - üstteki
+        </div>
+    </div>
+
+</body>
+</html>

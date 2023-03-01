@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jquery Ajax Kullanımı</title>
+        <script src="/jquery-3.6.3.min.js"></script>
+    </head>
+    <body>
+        <h1>Jquery Ajax Kullanımı</h1>
+        <form action="/Javascript//konu-15-Jquery-ajax.html">
+            <h3>Ürün Bilgileri</h3>
+            <input type="text" placeholder="Ürün Adı">
+            <input type="text" placeholder="Ürün Fiyatı">
+            <input type="submit" value="Kaydet">
+        </form>
+
+        <p id="ajax" style="border: 1px dashed; min-height: 18px;">
+        </p>
+        <input id="button1" type="button" value="Ajax ile içerik yükle">
+        <script>
+        $("#button1").click(function(){
+            $.ajax({
+                url:"/ajaxmetin.txt",
+                success: function(sonuc){
+                    $("#ajax").html(sonuc)
+                },
+                error: function(error){
+                    //$("#ajax").html("Hata oluştu : " + sonuc)
+                    console.error('Hata oluştu : ', error)
+                }
+            })
+        })
+    </script>
+    </body>
+</html>

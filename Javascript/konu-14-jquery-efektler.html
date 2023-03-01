@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Jquery Efekt Kullanma</title>
+        <script src="/jquery-3.6.3.min.js"></script>
+    </head>
+    <body>
+        <h1>Jquery Efekt Kullanma</h1>
+        <input type="button" value="Fade out" id="button1">
+        <input type="button" value="Fade in" id="button2">
+        <input type="button" value="Fade to" id="button3">
+
+        <button type="button" id="button4">Fade Toggle</button>
+
+        <div id="box" style="background-color: green; height: 150px; width:
+            150px; margin: 1rem; padding: 1rem; color: aliceblue;">
+            <h1>Jquery ile Efekt Kullanma</h1>
+        </div>
+
+        <script>
+        $("#button1").click(function(){
+            $("h1").fadeOut()
+            $("#box").delay("slow").fadeOut() // elementi id sine göre seçtiğimiz zaman #(kare) kullanıyırouz. Class'a göre seçersek .(nokta) kullanıyoruz
+        })
+
+        $("#button2").click(function(){
+            $("h1").fadeIn()
+            $("#box").delay("slow").fadeIn()
+        })
+
+        $("#button3").click(function(){
+            $("#box").fadeTo(1000,0.3) // hız, opacity: şeffaflık
+        })
+
+        $("#button4").click(function(){
+            $("#box").fadeToggle(1800)  // 1 kez basınca kaybeder, tekrar basınca geri getirir. 1800 ms cinsinden süreyi ayarlayabiliyoruz.
+        })
+    </script>
+
+        <hr>
+
+        <input type="button" value="Yükseklik animasyonu" id="button5">
+        <input type="button" value="animasyonu sıfırla" id="button6">
+        <script>
+        $("#button5").click(function(){
+            $("#box").animate({height: "200px"})
+        })
+
+        $("#button6").click(function(){
+            $("#box").animate({height: "150px"})
+        })
+    </script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karar - Koşul Yapıları</title>
+    <link rel="stylesheet" href="/Bootstrap/bootstrap.min.css">
+</head>
+
+<body>
+    <h1>Karar - Koşul Yapıları</h1>
+
+    <script>
+        var sayi = 10;
+        if (sayi > 0) {
+            console.log('Sayı Pozitif : ', sayi)
+        }
+        else if (sayi < 0) {
+            console.log('Sayı Negatif : ', sayi)
+        }
+        else console.log('Sayı 0 : ', sayi)
+
+        // Ternary operatörü (Kısa if)
+        // Eğer işlem sonucu 2 seçenekten oluşuyorsa, if else kullanmak yerine bu yöntemle çıktı üretebiliriz.
+        sayi > 0 ? console.log('Sayı Pozitif : ', sayi) : console.log('Sayı Negatif : ', sayi)
+
+        // Switch-Case 
+        switch (sayi) {
+            case 10:
+                console.log('Sayı Pozitif : ', sayi)
+                break;
+            case -10:
+                console.log('Sayı Negatif : ', sayi)
+                break;
+            default: console.log('Sayı 0 : ', sayi)
+                break;
+        }
+
+        let kullaniciAdi = "Admin", sifre = "1234";
+        if (kullaniciAdi == "Admin", sifre == "1234") {
+            document.write("<div class='alert alert-success'>Hoşgeldin " + kullaniciAdi + "</div>")
+        } else {
+            document.write("<div class ='aLert alert-danger'>Giriş başarısız!</div>")
+        }
+    </script>
+</body>
+
+</html>
