@@ -11,6 +11,16 @@
             height: 50px;
             border: 2px solid black;
         }
+        .active {
+            background-color:green ;
+        }
+        .divNoBorder{
+            border: none !important;
+        }
+        .pointer{
+            cursor:pointer;
+        }
+        
     </style>
 </head>
 <body>
@@ -20,18 +30,24 @@
                 <label>Kutu sayısını giriniz: </label>
                 <input class="form-control" id="divQuantity"/>
             </div>
+
             <div class="form-group col-2">
                 <label>Kutu oluştur</label>
                 <a class="btn btn-success" onclick="CreateDiv()">Oluştur ve Başlat</a>
             </div>
+
+            <div class="row" id="gameArea" style="padding-top: 10px;" >
+            
+            </div>
+
         </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="row" id="gameArea" style="padding-top: 10px;">
             
         </div>
-    </div>
+    </div> -->
 
 
     
@@ -43,9 +59,46 @@
             var quantity = $("#divQuantity").val();
             var html=""
             for (var i=0; i<quantity; i++){
-                html += "<div class='col-1 div'></div>";
+
+                var randomNumber = Math.floor(Math.random() * 2);
+                if(randomNumber==1){
+                    html += "<div class='col-1 div pointer' data-isFire='" + randomNumber + "' onclick='IsCheck(this)'></div>";
+                }
+                else{
+                    html += "<div class='col-1 div' data-isFire='" + randomNumber + "' onclick='IsCheck(this)'></div>";
+                }
+            
             }
             $("#gameArea").html(html);
+        }
+
+        function IsCheck (e){
+            if ($(e).attr("data-isfire") == 1 ) {
+                $(".div").addClass("divNoBorder")
+                alert("Oyun bitti, elendiniz. Mayına bastınız.. Skorunuz: " + $(".active").length)
+
+            }
+            else {
+                $(e).removeClass("div");
+                $(e).addClass("active");
+
+                var listDiv = $(".div");
+                var isFinish = true;
+                for(var i=0; i<listDiv.length; i++ ){
+                    if ($(listDiv[i]).attr("data-isFire") == 0){
+                        isFinish = false;
+                        break;
+                    }
+                    
+                }
+                if(isFinish){
+                    alert("Oyunu Başarıyla Tamamladınız. Tebrikler.")
+                    var newValue = parseInt($("#divQuantity").val()) + 2;
+                    $("#divQuantity").val(newValue);
+                    CreateDiv();
+                }
+            }
+            
         }
     
     </script>
